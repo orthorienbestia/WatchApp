@@ -11,6 +11,7 @@
 		E4CC48DE2D1E722400353B80 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CC48DD2D1E722400353B80 /* WidgetKit.framework */; };
 		E4CC48E02D1E722400353B80 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CC48DF2D1E722400353B80 /* SwiftUI.framework */; };
 		E4CC48F12D1E722600353B80 /* HealthWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4CC48DB2D1E722400353B80 /* HealthWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4CC49012D1E7E7400353B80 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E4CC49002D1E7E7400353B80 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 			files = (
 				E4CC48E02D1E722400353B80 /* SwiftUI.framework in Frameworks */,
 				E4CC48DE2D1E722400353B80 /* WidgetKit.framework in Frameworks */,
+				E4CC49012D1E7E7400353B80 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +178,7 @@
 			);
 			name = HealthWidgetExtension;
 			packageProductDependencies = (
+				E4CC49002D1E7E7400353B80 /* Lottie */,
 			);
 			productName = HealthWidgetExtension;
 			productReference = E4CC48DB2D1E722400353B80 /* HealthWidgetExtension.appex */;
@@ -547,6 +550,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		E4CC48CF2D1D8DD000353B80 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4CC48CE2D1D8DD000353B80 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		E4CC49002D1E7E7400353B80 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E4CC48CE2D1D8DD000353B80 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
