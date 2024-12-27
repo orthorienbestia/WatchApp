@@ -1,6 +1,5 @@
 import WidgetKit
 import SwiftUI
-import HealthKit
 
 struct HealthEntry: TimelineEntry {
     let date: Date
@@ -21,13 +20,20 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<HealthEntry>) -> ()) {
         var entries: [HealthEntry] = []
 
-        let groupUserDefaults = UserDefaults(suiteName: "group.com.example.HealthData")
-        let stepCount = groupUserDefaults?.integer(forKey: "stepCount") ?? 0
-        let heartRate = groupUserDefaults?.double(forKey: "heartRate") ?? 0.0
+        // Fetch data from shared user defaults
+        if let groupUserDefaults = UserDefaults(suiteName: "group.com.example.HealthData") {
+            let stepCount = groupUserDefaults.integer(forKey: "stepCount")
+            let heartRate = groupUserDefaults.double(forKey: "heartRate")
+            print("Data fetched: steps = \(stepCount), heart rate = \(heartRate)")
 
-        let entry = HealthEntry(date: Date(), stepCount: stepCount, heartRate: heartRate)
-        entries.append(entry)
+            // Create a timeline entry
+            let entry = HealthEntry(date: Date(), stepCount: stepCount, heartRate: heartRate)
+            entries.append(entry)
+        } else {
+            print("Failed to access shared user defaults")
+        }
 
+        // Generate a timeline with a single entry
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -52,3 +58,16 @@ struct HealthWidgetEntryView: View {
     }
 }
 
+@main
+struct HealthWidget: Widget {
+    let kind: String = "HealthWidget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            HealthWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("Health Widget")
+        .description("Displays your current step count and heart rate.")
+        .supportedFamilies([.systemSmall, .systemMedium])
+    }
+}

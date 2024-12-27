@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  WatchApp
-//
-//  Created by Akshay Khandizod on 27/12/24.
-//
-
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -21,8 +13,7 @@ class ViewController: UIViewController {
         if let groupUserDefaults = UserDefaults(suiteName: "group.com.example.HealthData") {
             groupUserDefaults.set(stepCount, forKey: "stepCount")
             groupUserDefaults.set(heartRate, forKey: "heartRate")
-            print(stepCount)
-            print( heartRate)
+            print("Data stored: steps = \(stepCount), heart rate = \(heartRate)")
         } else {
             print("Failed to access shared user defaults")
         }
