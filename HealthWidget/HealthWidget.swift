@@ -113,6 +113,8 @@ struct Provider: TimelineProvider {
 
 struct HealthWidgetEntryView: View {
     var entry: Provider.Entry
+    
+    @Environment(\.widgetFamily) var family
 
     var body: some View {
         VStack {
@@ -134,8 +136,11 @@ struct HealthWidgetEntryView: View {
             }
         }
         .padding()
-        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]),
-                                 startPoint: .topLeading, endPoint: .bottomTrailing))
+        .containerBackground(for: .widget) {
+            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]),
+                         startPoint: .topLeading,
+                         endPoint: .bottomTrailing)
+        }
     }
 }
 
