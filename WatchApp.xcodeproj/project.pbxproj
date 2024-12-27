@@ -6,14 +6,77 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E4CC48D02D1D8DD000353B80 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E4CC48CF2D1D8DD000353B80 /* Lottie */; };
+		E4CC48DE2D1E722400353B80 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CC48DD2D1E722400353B80 /* WidgetKit.framework */; };
+		E4CC48E02D1E722400353B80 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CC48DF2D1E722400353B80 /* SwiftUI.framework */; };
+		E4CC48F12D1E722600353B80 /* HealthWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4CC48DB2D1E722400353B80 /* HealthWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4CC48EF2D1E722600353B80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4CC48AE2D1D885200353B80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4CC48DA2D1E722400353B80;
+			remoteInfo = HealthWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4CC48F62D1E722600353B80 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E4CC48F12D1E722600353B80 /* HealthWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E4CC48B62D1D885200353B80 /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CC48DB2D1E722400353B80 /* HealthWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HealthWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CC48DD2D1E722400353B80 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		E4CC48DF2D1E722400353B80 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		E4CC48F72D1E732100353B80 /* HealthWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E4CC48F22D1E722600353B80 /* Exceptions for "HealthWidget" folder in "HealthWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E4CC48DA2D1E722400353B80 /* HealthWidgetExtension */;
+		};
+		E4CC48FB2D1E76A100353B80 /* Exceptions for "WatchApp" folder in "HealthWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LottieView.swift,
+			);
+			target = E4CC48DA2D1E722400353B80 /* HealthWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E4CC48B82D1D885200353B80 /* WatchApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E4CC48FB2D1E76A100353B80 /* Exceptions for "WatchApp" folder in "HealthWidgetExtension" target */,
+			);
 			path = WatchApp;
+			sourceTree = "<group>";
+		};
+		E4CC48E12D1E722400353B80 /* HealthWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E4CC48F22D1E722600353B80 /* Exceptions for "HealthWidget" folder in "HealthWidgetExtension" target */,
+			);
+			path = HealthWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +86,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4CC48D02D1D8DD000353B80 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4CC48D82D1E722400353B80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CC48E02D1E722400353B80 /* SwiftUI.framework in Frameworks */,
+				E4CC48DE2D1E722400353B80 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +105,10 @@
 		E4CC48AD2D1D885200353B80 = {
 			isa = PBXGroup;
 			children = (
+				E4CC48F72D1E732100353B80 /* HealthWidgetExtension.entitlements */,
 				E4CC48B82D1D885200353B80 /* WatchApp */,
+				E4CC48E12D1E722400353B80 /* HealthWidget */,
+				E4CC48DC2D1E722400353B80 /* Frameworks */,
 				E4CC48B72D1D885200353B80 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +117,18 @@
 			isa = PBXGroup;
 			children = (
 				E4CC48B62D1D885200353B80 /* WatchApp.app */,
+				E4CC48DB2D1E722400353B80 /* HealthWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E4CC48DC2D1E722400353B80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4CC48DD2D1E722400353B80 /* WidgetKit.framework */,
+				E4CC48DF2D1E722400353B80 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,20 +141,45 @@
 				E4CC48B22D1D885200353B80 /* Sources */,
 				E4CC48B32D1D885200353B80 /* Frameworks */,
 				E4CC48B42D1D885200353B80 /* Resources */,
+				E4CC48F62D1E722600353B80 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E4CC48F02D1E722600353B80 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E4CC48B82D1D885200353B80 /* WatchApp */,
 			);
 			name = WatchApp;
 			packageProductDependencies = (
+				E4CC48CF2D1D8DD000353B80 /* Lottie */,
 			);
 			productName = WatchApp;
 			productReference = E4CC48B62D1D885200353B80 /* WatchApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E4CC48DA2D1E722400353B80 /* HealthWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4CC48F32D1E722600353B80 /* Build configuration list for PBXNativeTarget "HealthWidgetExtension" */;
+			buildPhases = (
+				E4CC48D72D1E722400353B80 /* Sources */,
+				E4CC48D82D1E722400353B80 /* Frameworks */,
+				E4CC48D92D1E722400353B80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E4CC48E12D1E722400353B80 /* HealthWidget */,
+			);
+			name = HealthWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = HealthWidgetExtension;
+			productReference = E4CC48DB2D1E722400353B80 /* HealthWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +194,9 @@
 					E4CC48B52D1D885200353B80 = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					E4CC48DA2D1E722400353B80 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 				};
 			};
 			buildConfigurationList = E4CC48B12D1D885200353B80 /* Build configuration list for PBXProject "WatchApp" */;
@@ -94,18 +208,29 @@
 			);
 			mainGroup = E4CC48AD2D1D885200353B80;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E4CC48CE2D1D8DD000353B80 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E4CC48B72D1D885200353B80 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E4CC48B52D1D885200353B80 /* WatchApp */,
+				E4CC48DA2D1E722400353B80 /* HealthWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E4CC48B42D1D885200353B80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4CC48D92D1E722400353B80 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +247,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4CC48D72D1E722400353B80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4CC48F02D1E722600353B80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4CC48DA2D1E722400353B80 /* HealthWidgetExtension */;
+			targetProxy = E4CC48EF2D1E722600353B80 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E4CC48C22D1D885300353B80 /* Debug */ = {
@@ -249,12 +389,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WatchApp/WatchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchApp/Preview Content\"";
 				DEVELOPMENT_TEAM = Q36CVR44PV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "The app is using it for displaying heart rate and steps";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -278,12 +420,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WatchApp/WatchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchApp/Preview Content\"";
 				DEVELOPMENT_TEAM = Q36CVR44PV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "The app is using it for displaying heart rate and steps";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -296,6 +440,62 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.testing.watchapp.WatchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E4CC48F42D1E722600353B80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = HealthWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q36CVR44PV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealthWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HealthWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.testing.watchapp.WatchApp.HealthWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E4CC48F52D1E722600353B80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = HealthWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q36CVR44PV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealthWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HealthWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.testing.watchapp.WatchApp.HealthWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,7 +523,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		E4CC48F32D1E722600353B80 /* Build configuration list for PBXNativeTarget "HealthWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4CC48F42D1E722600353B80 /* Debug */,
+				E4CC48F52D1E722600353B80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E4CC48CE2D1D8DD000353B80 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4CC48CF2D1D8DD000353B80 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4CC48CE2D1D8DD000353B80 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4CC48AE2D1D885200353B80 /* Project object */;
 }
