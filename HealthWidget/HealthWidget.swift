@@ -150,6 +150,5 @@ struct HealthWidget: Widget {
         .configurationDisplayName("Health Widget")
         .description("Displays your current step count and heart rate.")
         .supportedFamilies([.systemSmall, .systemMedium])
-        .contentMarginsDisabled()
     }
 }
