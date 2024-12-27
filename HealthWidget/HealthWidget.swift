@@ -62,9 +62,12 @@ struct Provider: TimelineProvider {
             group.enter()
             let stepQuery = HKStatisticsQuery(quantityType: stepType,
                                             quantitySamplePredicate: predicate,
-                                            options: .cumulativeSum) { _, result, _ in
-                if let sum = result?.sumQuantity() {
+                                            options: .cumulativeSum) { _, result, error in
+                if let error = error {
+                    print("Error fetching step count: \(error.localizedDescription)")
+                } else if let sum = result?.sumQuantity() {
                     steps = Int(sum.doubleValue(for: HKUnit.count()))
+                    print("Fetched step count: \(steps)")
                 }
                 group.leave()
             }
@@ -75,9 +78,12 @@ struct Provider: TimelineProvider {
             let heartQuery = HKSampleQuery(sampleType: heartType,
                                          predicate: predicate,
                                          limit: 1,
-                                         sortDescriptors: [sortDescriptor]) { _, samples, _ in
-                if let sample = samples?.first as? HKQuantitySample {
+                                         sortDescriptors: [sortDescriptor]) { _, samples, error in
+                if let error = error {
+                    print("Error fetching heart rate: \(error.localizedDescription)")
+                } else if let sample = samples?.first as? HKQuantitySample {
                     heartRate = sample.quantity.doubleValue(for: HKUnit(from: "count/min"))
+                    print("Fetched heart rate: \(heartRate)")
                 }
                 group.leave()
             }
@@ -96,28 +102,6 @@ struct Provider: TimelineProvider {
         }
     }
 }
-
-//    func getTimeline(in context: Context, completion: @escaping (Timeline<HealthEntry>) -> ()) {
-//        var entries: [HealthEntry] = []
-//
-//        // Fetch data from shared user defaults
-//        if let groupUserDefaults = UserDefaults(suiteName: "group.com.example.HealthData") {
-//            let stepCount = groupUserDefaults.integer(forKey: "stepCount")
-//            let heartRate = groupUserDefaults.double(forKey: "heartRate")
-//            print("Data fetched: steps = \(stepCount), heart rate = \(heartRate)")
-//
-//            // Create a timeline entry
-//            let entry = HealthEntry(date: Date(), stepCount: stepCount, heartRate: heartRate)
-//            entries.append(entry)
-//        } else {
-//            print("Failed to access shared user defaults")
-//        }
-//
-//        // Generate a timeline with a single entry
-//        let timeline = Timeline(entries: entries, policy: .atEnd)
-//        completion(timeline)
-//    }
-//}
 
 struct HealthWidgetEntryView: View {
     var entry: Provider.Entry
